@@ -30,3 +30,9 @@
   padding-top: 50px;
   text-align: center;
 }
+
+.weather-item__detail-label,
+.weather-item__detail-value {
+  padding: 5px 0;
+  vertical-align: middle;
+}
