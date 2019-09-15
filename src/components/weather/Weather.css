@@ -36,3 +36,8 @@
   padding: 5px 0;
   vertical-align: middle;
 }
+
+.weather-container {
+  overflow: auto;
+  margin: 50px;
+}

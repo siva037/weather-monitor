@@ -63,7 +63,7 @@ class Weather extends React.Component {
         console.log(isWeatherLoading, weather);
 
         return (
-                <div>
+                <div className="weather-container">
                 {
                     isWeatherLoading ? <div>Loading...</div> :
                     <div>
