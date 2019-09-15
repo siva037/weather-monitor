@@ -21,8 +21,16 @@ class Weather extends React.Component {
         console.log(isWeatherLoading, weather);
 
         return (
-            <div>Weather Data</div>
-        )
+                <div>
+                {
+                    isWeatherLoading ? <div>Loading...</div> :
+                    <div>
+                        <div>{weather.weather.name}</div>
+                        <div>{new Date().toLocaleString('en-GB', { timeZone: 'Europe/London' })}</div>
+                    </div>
+                }
+                </div>
+                )
     }
 }
 
