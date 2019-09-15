@@ -7,7 +7,7 @@ import './App.css';
 
 import Weather from './components/weather/Weather';
 import rootReducer from "./state/rootReducer";
-import rootSaga from "./state/weather/sagas/fetchWeatherSaga";
+import rootSaga from "./state/rootSaga";
 
 function App() {
 
