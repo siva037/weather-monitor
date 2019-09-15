@@ -8,6 +8,8 @@ import {
     getWeather
 } from '../../state/weather/selectors/weather';
 
+import WeatherHeader from "./WeatherHeader";
+
 import "./Weather.css";
 
 class Weather extends React.Component {
@@ -15,19 +17,6 @@ class Weather extends React.Component {
     componentDidMount() {
         this.props.fetchWeather();
         console.log(1);
-    }
-
-    getDateTime(){
-        const locale = "en-GB";
-        const timeZone = "Europe/London";
-        const currentDateTime = new Date();
-        return currentDateTime.toLocaleString(locale, { timeZone: timeZone });
-    }
-
-    buildWeatherDescription(weather){
-        const weatherDescriptionObject = weather.weather.weather[0];
-        const weatherDescription = weatherDescriptionObject.main + ", " + weatherDescriptionObject.description;
-        return <div>{weatherDescription}</div>;
     }
 
     getFormattedWeatherLabel(weatherKey){
@@ -67,15 +56,7 @@ class Weather extends React.Component {
                 {
                     isWeatherLoading ? <div>Loading...</div> :
                     <div>
-                        <div className="weather-header__details">
-                            <div className="weather-header__city">
-                                <div className="weather-header__city-name">{weather.weather.name}</div>
-                                <div>{this.getDateTime()}</div>
-                            </div>
-                            <div className="weather-header__description">
-                                {this.buildWeatherDescription(weather)}
-                            </div>
-                        </div>
+                        <WeatherHeader cityName={weather.weather.name} weatherDescription={weather.weather.weather[0]} />
                         <table className="weather-item__details">
                             <tbody>
                                 { this.renderWeatherDetails(weather.weather.main) }
