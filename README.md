@@ -20,7 +20,7 @@ Please make sure your system has the following,
 In command line, navigate to weather-monitor and run yarn install/npm install
 
 ### `Run`
-* In command line, navigato to weather-monitor and run yarn start/npm start
+* In command line, navigate to weather-monitor and run yarn start/npm start
 
 ### `Developed with`
 * [Node.js](https://nodejs.org)- Javascript runtime
