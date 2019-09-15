@@ -22,3 +22,11 @@
   font-size: 22px;
   font-weight: 600;
 }
+
+.weather-item__details {
+  width: 100%;
+  table-layout: fixed;
+  font-size: 14px;
+  padding-top: 50px;
+  text-align: center;
+}
