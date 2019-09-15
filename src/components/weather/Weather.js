@@ -17,6 +17,19 @@ class Weather extends React.Component {
         console.log(1);
     }
 
+    getDateTime(){
+        const locale = "en-GB";
+        const timeZone = "Europe/London";
+        const currentDateTime = new Date();
+        return currentDateTime.toLocaleString(locale, { timeZone: timeZone });
+    }
+
+    buildWeatherDescription(weather){
+        const weatherDescriptionObject = weather.weather.weather[0];
+        const weatherDescription = weatherDescriptionObject.main + ", " + weatherDescriptionObject.description;
+        return <div>{weatherDescription}</div>;
+    }
+
     render() {
 
         const {isWeatherLoading, weather} = this.props;
@@ -30,10 +43,10 @@ class Weather extends React.Component {
                         <div className="weather-header__details">
                             <div className="weather-header__city">
                                 <div className="weather-header__city-name">{weather.weather.name}</div>
-                                <div>{new Date().toLocaleString('en-GB', { timeZone: 'Europe/London' })}</div>
+                                <div>{this.getDateTime()}</div>
                             </div>
                             <div className="weather-header__description">
-                                {weather.weather.weather[0].main}
+                                {this.buildWeatherDescription(weather)}
                             </div>
                         </div>
                     </div>
