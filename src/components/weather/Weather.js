@@ -17,13 +17,11 @@ class Weather extends React.Component {
 
     componentDidMount() {
         this.props.fetchWeather();
-        console.log(1);
     }
 
     render() {
 
         const {isWeatherLoading, weather} = this.props;
-        console.log(isWeatherLoading, weather);
 
         return (
                 <div className="weather-container">
