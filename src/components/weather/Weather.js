@@ -30,6 +30,18 @@ class Weather extends React.Component {
         return <div>{weatherDescription}</div>;
     }
 
+    renderWeatherDetails(weatherItems) {
+        const weatherKeyList = Object.keys(weatherItems);
+        const weatherDataList = Object.values(weatherItems);
+
+        return weatherKeyList.map((key, index) => (
+            <tr key={index}>
+                <td>{ key }</td>
+                <td>{ weatherDataList[index] }</td>
+            </tr>
+        ));
+    }
+
     render() {
 
         const {isWeatherLoading, weather} = this.props;
@@ -49,6 +61,11 @@ class Weather extends React.Component {
                                 {this.buildWeatherDescription(weather)}
                             </div>
                         </div>
+                        <table className="weather-item__details">
+                            <tbody>
+                                { this.renderWeatherDetails(weather.weather.main) }
+                            </tbody>
+                        </table>
                     </div>
                 }
                 </div>
