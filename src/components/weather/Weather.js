@@ -29,7 +29,7 @@ class Weather extends React.Component {
                     <div>
                         <div className="weather-header__details">
                             <div className="weather-header__city">
-                                <div className="weather-header__city-name">{this.props.cityName}</div>
+                                <div className="weather-header__city-name">{weather.weather.name}</div>
                                 <div>{new Date().toLocaleString('en-GB', { timeZone: 'Europe/London' })}</div>
                             </div>
                             <div className="weather-header__description">
