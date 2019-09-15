@@ -8,7 +8,7 @@
 ### `Prerequisites`
 
 Please make sure your system has the following,
-* Npm
+* Npm/Yarn
 * Node
 * Git
 
@@ -17,10 +17,10 @@ Please make sure your system has the following,
 * Clone the repo 'weather-monitor' from Github using 'https://github.com/siva037/weather-monitor.git'
 
 * Install npm packages
-In command line, navigato to weather-monitor and run yarn install
+In command line, navigate to weather-monitor and run yarn install/npm install
 
 ### `Run`
-* In command line, navigato to weather-monitor and run yarn start
+* In command line, navigato to weather-monitor and run yarn start/npm start
 
 ### `Developed with`
 * [Node.js](https://nodejs.org)- Javascript runtime
