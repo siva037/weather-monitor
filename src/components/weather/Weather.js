@@ -1,12 +1,14 @@
 import React from "react";
 import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+
 import {fetchWeather} from '../../state/weather/actions';
 import {
     isWeatherLoading,
     getWeather
 } from '../../state/weather/selectors/weather';
-import { bindActionCreators } from "redux";
 
+import "./Weather.css";
 
 class Weather extends React.Component {
 
@@ -25,8 +27,15 @@ class Weather extends React.Component {
                 {
                     isWeatherLoading ? <div>Loading...</div> :
                     <div>
-                        <div>{weather.weather.name}</div>
-                        <div>{new Date().toLocaleString('en-GB', { timeZone: 'Europe/London' })}</div>
+                        <div className="weather-header__details">
+                            <div className="weather-header__city">
+                                <div className="weather-header__city-name">{this.props.cityName}</div>
+                                <div>{new Date().toLocaleString('en-GB', { timeZone: 'Europe/London' })}</div>
+                            </div>
+                            <div className="weather-header__description">
+                                {weather.weather.weather[0].main}
+                            </div>
+                        </div>
                     </div>
                 }
                 </div>

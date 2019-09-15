@@ -1,0 +1,24 @@
+
+.weather-header__details {
+  display: flex;
+  padding: 20px 75px;
+}
+
+.weather-header__city {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width:0;
+}
+
+.weather-header__city-name {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.weather-header__description {
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+  font-weight: 600;
+}
